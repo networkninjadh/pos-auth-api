@@ -98,14 +98,14 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 				/**
 				 * Authentication for Beauty Hero api
 				 */
-				.antMatchers(HttpMethod.DELETE, "/beauty-hero-api/**")
-				.hasAuthority(ApplicationUserPermission.BEAUTY_HERO_WRITE.getPermission())
-				.antMatchers(HttpMethod.POST, "/beauty-hero-api/**")
-				.hasAuthority(ApplicationUserPermission.BEAUTY_HERO_WRITE.getPermission())
-				.antMatchers(HttpMethod.PUT, "/beauty-hero-api/**")
-				.hasAuthority(ApplicationUserPermission.BEAUTY_HERO_WRITE.getPermission())
-				.antMatchers(HttpMethod.GET, "/beauty-hero-api/**")
-				.hasAuthority(ApplicationUserPermission.BEAUTY_HERO_READ.getPermission())
+				.antMatchers(HttpMethod.DELETE, "/helper-api/**")
+				.hasAuthority(ApplicationUserPermission.HELPER_WRITE.getPermission())
+				.antMatchers(HttpMethod.POST, "/helper-api/**")
+				.hasAuthority(ApplicationUserPermission.HELPER_WRITE.getPermission())
+				.antMatchers(HttpMethod.PUT, "/helpler-api/**")
+				.hasAuthority(ApplicationUserPermission.HELPER_WRITE.getPermission())
+				.antMatchers(HttpMethod.GET, "/helper-api/**")
+				.hasAuthority(ApplicationUserPermission.HELPER_READ.getPermission())
 				/**
 				 * Authentication for orders and shipments controller
 				 */
