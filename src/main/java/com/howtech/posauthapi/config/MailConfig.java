@@ -9,14 +9,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
-@Configuration
+//@Configuration
 public class MailConfig {
 	final private String HOST = System.getenv("MAIL_HOST");
 	final private int PORT = Integer.parseInt(System.getenv("MAIL_PORT"));
 	final private String USERNAME = System.getenv("MAIL_USERNAME");
 	final private String PASSWORD = System.getenv("MAIL_PASSWORD");
 
-	@Bean
+	// @Bean
 	JavaMailSender getJavaMailSender() {
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 

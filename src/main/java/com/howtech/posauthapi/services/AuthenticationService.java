@@ -37,17 +37,17 @@ public class AuthenticationService {
 
     private final JwtUserDetailsService userDetailsService;
 
-    private final EmailService emailService;
+    // private final EmailService emailService;
 
     private final PasswordEncoder passwordEncoder;
 
     public AuthenticationService(AuthenticationManager authenticationManager, JwtTokenUtil jwtTokenUtil,
-            JwtUserDetailsService userDetailsService, EmailService emailService,
+            JwtUserDetailsService userDetailsService, /** EmailService emailService , **/
             PasswordEncoder passwordEncoder) {
         this.authenticationManager = authenticationManager;
         this.jwtTokenUtil = jwtTokenUtil;
         this.userDetailsService = userDetailsService;
-        this.emailService = emailService;
+        // this.emailService = emailService;
         this.passwordEncoder = passwordEncoder;
     }
 
