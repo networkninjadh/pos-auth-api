@@ -50,6 +50,24 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-circuitbreaker-reactor-resilience4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring-boot-starter-web</artifactId>
+					<groupId>org.springframework.boot</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -62,7 +80,7 @@
 		<dependency>
     <groupId>com.google.guava</groupId>
     <artifactId>guava</artifactId>
-    <version>31.0.1-jre</version>
+    <version>31.1-jre</version>
 </dependency>
 	<dependency>
 			<!-- JSON Web Token Support -->
@@ -74,8 +92,20 @@
     		<groupId>org.springframework.boot</groupId>
     		<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
-	</dependencies>
 
+
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>2021.0.0</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
