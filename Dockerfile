@@ -1,8 +1,5 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
-RUN addgroup -S spring && adduser -S spring -G spring
-USER spring:spring
-ENV APP_HOME=/usr/pos-auth-api
-ARG JAR_FILE=target/*.jar 
-COPY POS-System.jar app.jar
+CMD mnv clean package
+COPY target/pos-auth-api-0.0.1-SNAPSHOT.jar pos-auth-api.jar
+ENTRYPOINT ["java", "-jar", "pos-auth-api.jar"]
 EXPOSE 8081
-CMD [ "java","-jar","app.jar"]
