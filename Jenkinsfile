@@ -27,7 +27,8 @@ pipeline {
             steps {
                 sh 'mvn clean package'
                 sh 'docker build -t pos-auth-api .'
-                sh 'docker run --network="host" -p8085:8085 pos-auth-api'
+                sh 'echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin'
+                sh 'docker push networkninjadh/pos-auth-api:latest'
             }
         }
 
